@@ -6,7 +6,7 @@ public class Main {
 
 	static ArrayList<Integer> expenses = new ArrayList<Integer>();
     public static void main(String[] args) {
-       //System.out.println("Hello World!");
+      
     	expenses.add(1000);
         expenses.add(2300);
         expenses.add(45000);
@@ -32,7 +32,7 @@ public class Main {
         int  slen = arr1.length;
         for(int i=0; i<slen;i++){
             System.out.println(arr[i]);
-            // display the all the Strings mentioned in the String array
+           
         }
         ArrayList<Integer> arrlist = new ArrayList<Integer>();
         
@@ -97,6 +97,8 @@ public class Main {
     @SuppressWarnings("resource")
 	private static void searchExpenses(ArrayList<Integer> arrayList) {
         arrayList.size();
+        //The value to be searched is taken from the user
+        //arraylist.contains method is used to look for the elements
         Scanner obj = new Scanner(System.in);
         System.out.println("Enter the expense you need to search:\t");
         int value = obj.nextInt();
