@@ -1,14 +1,23 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
 
+	static ArrayList<Integer> expenses = new ArrayList<Integer>();
     public static void main(String[] args) {
-       System.out.println("Hello World!");
+       //System.out.println("Hello World!");
+    	expenses.add(1000);
+        expenses.add(2300);
+        expenses.add(45000);
+        expenses.add(32000);
+        expenses.add(110);
         System.out.println("\n**************************************\n");
         System.out.println("\tWelcome to TheDesk \n");
         System.out.println("**************************************");
         optionsSelection();
+        
+        
 
     }
     private static void optionsSelection() {
@@ -26,12 +35,8 @@ public class Main {
             // display the all the Strings mentioned in the String array
         }
         ArrayList<Integer> arrlist = new ArrayList<Integer>();
-        ArrayList<Integer> expenses = new ArrayList<Integer>();
-        expenses.add(1000);
-        expenses.add(2300);
-        expenses.add(45000);
-        expenses.add(32000);
-        expenses.add(110);
+        
+        
         expenses.addAll(arrlist);
         System.out.println("\nEnter your choice:\t");
         Scanner sc = new Scanner(System.in);
@@ -87,14 +92,28 @@ public class Main {
     }
     private static void closeApp() {
         System.out.println("Closing your application... \nThank you!");
+        System.exit(0);
             }
-    private static void searchExpenses(ArrayList<Integer> arrayList) {
-        int leng = arrayList.size();
+    @SuppressWarnings("resource")
+	private static void searchExpenses(ArrayList<Integer> arrayList) {
+        arrayList.size();
+        Scanner obj = new Scanner(System.in);
         System.out.println("Enter the expense you need to search:\t");
-        //Complete the method
+        int value = obj.nextInt();
+        if (arrayList.contains(value)) {
+        	System.out.println(value + " found in expense");
+        }else {
+        	System.out.println(value+ " not found in expense");
+        }
     }
     private static void sortExpenses(ArrayList<Integer> arrayList) {
         int arrlength =  arrayList.size();
-       //Complete the method. The expenses should be sorted in ascending order.
+        //Collections.sort method is used to sort the elements present 
+        //in the specified list of collection in ascending order
+        Collections.sort(arrayList);
+        System.out.println("The sorted expense list is:");
+        for(Integer entry: arrayList) {
+        	System.out.println("Expense:" + entry);
+        }
     }
 }
